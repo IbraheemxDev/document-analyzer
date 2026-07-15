@@ -21,7 +21,7 @@ model User {
   memberships    OrganizationMember[]
   documents      Document[]
 
-  @@map("user")
+  @@map("users")
 }
 
 
