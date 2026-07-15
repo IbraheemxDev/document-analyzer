@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ClerkProvider } from '@clerk/nextjs'
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,9 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en" className={cn("font-sans", geist.variable)}
+      lang="en"
     >
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ClerkProvider>{children}</ClerkProvider>
+      </body>
     </html>
   );
 }
