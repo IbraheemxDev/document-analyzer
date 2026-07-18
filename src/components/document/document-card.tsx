@@ -187,11 +187,13 @@ export function DocumentCard({
             </div>
 
             <Select
-              value={selectedAnalysisType}
-              onValueChange={(value: AnalysisType) =>
-                onAnalysisTypeChange(value)
-              }
-            >
+  value={selectedAnalysisType}
+  onValueChange={(value) => {
+    if (value !== null) {
+      onAnalysisTypeChange(value as AnalysisType);
+    }
+  }}
+>
               <SelectTrigger className="w-full">
                 <SelectValue>
                   <div className="flex items-center gap-2">
