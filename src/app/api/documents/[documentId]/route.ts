@@ -8,7 +8,7 @@ import { ApiResponse } from "@/utils/ApiResponse";
 interface RouteParams {
   params: Promise<{ documentId: string }>;
 }
-
+ 
 export async function DELETE(request: NextRequest, { params }: RouteParams) {
   try {
     const { documentId } = await params;
